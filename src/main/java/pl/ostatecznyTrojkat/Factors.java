@@ -1,13 +1,11 @@
 package pl.ostatecznyTrojkat;
 
-/**
- * Created by RENT on 2017-01-05.
- */
-public class Factors {
-    int x;
-    int y;
 
-    public Factors(int x, int y) {
+public class Factors {
+    private int x;
+    private int y;
+
+    Factors(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -26,4 +24,23 @@ public class Factors {
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Factors factors = (Factors) o;
+
+        if (x != factors.x) return false;
+        return y == factors.y;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        return result;
+    }
 }
+
