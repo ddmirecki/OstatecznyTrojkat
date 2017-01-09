@@ -13,7 +13,7 @@ public class Math {
         } else {
             List<Factors> list = new ArrayList<Factors>();
             for (int i = 1; i <= java.lang.Math.abs(number); i++) {
-                if (number % i == 0) {
+                if (number % i == 0) { //test
                     int secondNumber = number / i;
                     list.add(new Factors(i, secondNumber));
                 }
